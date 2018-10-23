@@ -7,11 +7,14 @@ package lendle.courses.network.controlledinputs;
 
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
+import java.util.Calendar;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JSpinner;
+import javax.swing.SpinnerDateModel;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.WindowConstants;
+import sun.util.spi.CalendarProvider;
 
 /**
  *
@@ -30,11 +33,8 @@ public class NumericSpinner {
         frame.setLayout(new FlowLayout());
         JSpinner spinner=new JSpinner();
         //create a SpinnerNumberModel
-        SpinnerNumberModel model=new SpinnerNumberModel();
-        model.setMaximum(100);
-        model.setMinimum(0);
-        model.setValue(50);
-        model.setStepSize(10);
+        SpinnerDateModel model=new SpinnerDateModel();
+        model.setCalendarField(Calendar.DATE);
         spinner.setModel(model);
         ///////////////////////////////////////////////////
         frame.add(spinner);
